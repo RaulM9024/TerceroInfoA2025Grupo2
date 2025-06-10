@@ -99,7 +99,7 @@ function renderProductos(categoria = 'todos', filtroTexto = '') {
         <h3>${p.nombre}</h3>
         <p>${p.descripcion}</p>
         <p class="precio">
-          ${p.promo !== null ? `<span class="old-price">€${p.precio.toFixed(2)}</span> €${p.promo.toFixed(2)}` : `€${p.precio.toFixed(2)}`}
+          ${p.promo !== null ? `<span class="old-price">$${p.precio.toFixed(2)}</span> $${p.promo.toFixed(2)}` : `$${p.precio.toFixed(2)}`}
         </p>
         <button class="agregar-carrito" data-id="${p.id}">Agregar al carrito</button>
       </div>
@@ -164,7 +164,7 @@ function mostrarAbout() {
 function mostrarCarrito() {
   if(carrito.length === 0){
     carritoList.innerHTML = '<p>Tu carrito está vacío.</p>';
-    totalCarrito.textContent = 'Total: €0.00';
+    totalCarrito.textContent = 'Total: $0.00';
   } else {
     let html = '<ul>';
     let total = 0;
@@ -173,13 +173,13 @@ function mostrarCarrito() {
       const precioReal = prod.promo !== null ? prod.promo : prod.precio;
       total += precioReal * item.cantidad;
       html += `<li>
-        ${prod.nombre} (x${item.cantidad}) - €${(precioReal * item.cantidad).toFixed(2)}
+        ${prod.nombre} (x${item.cantidad}) - $${(precioReal * item.cantidad).toFixed(2)}
         <button class="eliminar-item" data-id="${item.id}">X</button>
       </li>`;
     });
     html += '</ul>';
     carritoList.innerHTML = html;
-    totalCarrito.textContent = `Total: €${total.toFixed(2)}`;
+    totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
 
     // Botones eliminar
     carritoList.querySelectorAll('button.eliminar-item').forEach(btn => {
