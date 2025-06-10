@@ -1,6 +1,7 @@
  {
     box-sizing: border-box;
   }
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -24,7 +25,7 @@
     align-items: center;
   }
   nav.menu-principal a {
-    color: white;
+    color: #EDE8D0;
     text-decoration: none;
     font-weight: bold;
     padding: 6px 12px;
@@ -192,7 +193,7 @@
     background: transparent;
     cursor: pointer;
     line-height: 1;
-    color: #333;
+    color: #fd0a0a;
     user-select: none;
     padding: 0;
   }
